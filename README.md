@@ -5,12 +5,14 @@
 <p align="center">
   <img src="https://img.shields.io/github/issues/jberry93/react-review.svg" alt="Issues">
   <img src="https://img.shields.io/github/license/jberry93/react-review.svg" alt="License">
+  <img src="https://travis-ci.org/jberry93/react-review.svg?branch=master" alt="Travis CI">
   <a href='https://coveralls.io/github/jberry93/react-review?branch=master'><img src='https://coveralls.io/repos/github/jberry93/react-review/badge.svg?branch=master' alt='Coverage Status' /></a>
   <a href="https://codeclimate.com/github/jberry93/react-review/maintainability"><img src="https://api.codeclimate.com/v1/badges/701292c7ee1bddd17811/maintainability" /></a>
 </p>
 
 ## Currently Built With
 - React (v.16.0.0)
+- ES6
 
 ## Current Features
 - The user can create cards
