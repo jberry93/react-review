@@ -1,0 +1,19 @@
+{
+  "name": "functions",
+  "description": "Firebase Cloud Functions for React Review",
+  "dependencies": {
+    "firebase-admin": "~5.4.0",
+    "firebase-functions": "^0.7.0"
+  },
+  "private": true,
+  "main": "build/index.js",
+  "devDependencies": {
+    "@types/express": "^4.0.39",
+    "typescript": "^2.5.3"
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsx --watch",
+    "deploy": "tsc && firebase deploy --only functions"
+  }
+}

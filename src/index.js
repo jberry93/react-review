@@ -1,96 +1,9 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import ReactDOM from 'react-dom'
+import { Deck } from './components/Deck'
 import './index.css'
 
-class Deck extends Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-      toggleSide: true,
-      counts: {
-        total: this.props.cards.length,
-        current: 0,
-        next: 1,
-        prev: 0
-      }
-    }
-  }
-
-  // Need to update state when props are updated
-  componentWillReceiveProps (props) {
-    this.setState({
-      counts: {
-        total: props.cards.length,
-        current: this.state.counts.current,
-        next: this.state.counts.next,
-        prev: this.state.counts.prev
-      }
-    })
-  }
-
-  switchSides = () => {
-    this.setState({
-      toggleSide: !this.state.toggleSide
-    })
-  }
-
-  nextCard = () => {
-    const [
-      currentCount,
-      nextCount,
-      prevCount
-    ] = [
-      this.state.counts.current,
-      this.state.counts.next,
-      this.state.counts.prev
-    ]
-    this.setState({
-      counts: {
-        total: this.props.cards.length,
-        current: currentCount < this.state.counts.total - 1 ? currentCount + 1 : currentCount,
-        next: nextCount < this.state.counts.total ? nextCount + 1 : nextCount,
-        prev: prevCount < this.state.counts.total - 2 ? prevCount + 1 : prevCount
-      }
-    })
-  }
-
-  prevCard = () => {
-    const [
-      currentCount,
-      nextCount,
-      prevCount
-    ] = [
-      this.state.counts.current,
-      this.state.counts.next,
-      this.state.counts.prev
-    ]
-    this.setState({
-      counts: {
-        total: this.props.cards.length,
-        current: currentCount > 0 ? currentCount - 1 : 0,
-        next: nextCount > 1 ? nextCount - 1 : 1,
-        prev: prevCount > 0 ? prevCount - 1 : 0
-      }
-    })
-  }
-
-  render () {
-    return (
-      <div>
-        {this.state.toggleSide ? (
-          <h1>{this.props.cards[this.state.counts.current].question}</h1>
-        ) : (
-          <h1>{this.props.cards[this.state.counts.current].answer}</h1>
-        )}
-        <button onClick={this.switchSides}>Flip</button>
-        <button onClick={this.prevCard}>Previous</button>
-        <button onClick={this.nextCard}>Next</button>
-      </div>
-    )
-  }
-}
-
-class FlashCards extends Component {
+class FlashCards extends PureComponent {
   constructor () {
     super()
     this.state = {
@@ -99,7 +12,8 @@ class FlashCards extends Component {
         answer: ''
       },
       cards: [],
-      isNewCard: false
+      isNewCard: false,
+      hasError: false
     }
   }
 
@@ -116,9 +30,16 @@ class FlashCards extends Component {
   submitCard = e => {
     const card = this.state.card
     const cards = this.state.cards
-    cards.push(card)
-    this.setState({ cards })
-    this.toggleNewCard()
+    if (card.question && card.answer) {
+      cards.push(card)
+      this.setState({
+        cards,
+        hasError: false
+      })
+      this.toggleNewCard()
+    } else {
+      this.setState({ hasError: true })
+    }
   }
 
   toggleNewCard = e => {
@@ -132,19 +53,15 @@ class FlashCards extends Component {
   }
 
   render () {
-    const toggleNewCard = this.state.isNewCard
-
-    const newCardStyles = {
-      display: 'flex',
-      flexDirection: 'column'
-    }
-
     return (
       <div>
         <h1>React Cards</h1>
         <button onClick={this.toggleNewCard}>Create Card</button>
-        {toggleNewCard &&
-          <div style={newCardStyles}>
+        {this.state.isNewCard &&
+          <div className="new-card-form">
+            {this.state.hasError &&
+              <p>Please give a question and answer</p>
+            }
             <textarea
               placeholder="Question"
               onChange={this.handleChange('question')}

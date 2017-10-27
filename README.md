@@ -1,6 +1,6 @@
 <h1 align="center">React Review</h1>
 <p align="center">
-  A simple flashcard app built with React
+  A simple flashcard app
 </p>
 <p align="center">
   <img src="https://img.shields.io/github/issues/jberry93/react-review.svg" alt="Issues">
@@ -12,6 +12,7 @@
 
 ## Currently Built With
 - React (v.16.0.0)
+- Firebase (Hosting, Functions, Database)
 - ES6
 
 ## Current Features
@@ -38,4 +39,5 @@ The user can...
 - [ ] Use Coveralls to run analysis on testing coverage
 - [x] Use Dependabot to keep dependencies up to date
 - [x] Use Code Climate to keep track of tech debt
-- [ ] Think about architecture (JAMstack, MVC, etc)
+- [x] Think about architecture (JAMstack, MVC, etc)
+- [x] Think about hosting (will likely be Firebase for funsies :D)
