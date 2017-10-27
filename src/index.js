@@ -2,14 +2,6 @@ import React, { PureComponent } from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 
-function Card (props) {
-  return (
-    <div>
-      <h1>This is a card</h1>
-    </div>
-  )
-}
-
 class Deck extends PureComponent {
   constructor (props) {
     super(props)
@@ -43,41 +35,23 @@ class Deck extends PureComponent {
   }
 
   nextCard = () => {
-    const [
-      updatedCurrent,
-      updatedNext,
-      updatedPrev
-    ] = [
-      this.state.counts.current < this.state.counts.total - 1 ? this.state.counts.current + 1 : this.state.counts.current,
-      this.state.counts.next < this.state.counts.total ? this.state.counts.next + 1 : this.state.counts.next,
-      this.state.counts.prev < this.state.counts.total - 2 ? this.state.counts.prev + 1 : this.state.counts.prev
-    ]
     this.setState({
       counts: {
         total: this.props.cards.length,
-        current: updatedCurrent,
-        next: updatedNext,
-        prev: updatedPrev
+        current: this.state.counts.current < this.state.counts.total - 1 ? this.state.counts.current + 1 : this.state.counts.current,
+        next: this.state.counts.next < this.state.counts.total ? this.state.counts.next + 1 : this.state.counts.next,
+        prev: this.state.counts.prev < this.state.counts.total - 2 ? this.state.counts.prev + 1 : this.state.counts.prev
       }
     })
   }
 
   prevCard = () => {
-    const [
-      updatedCurrent,
-      updatedNext,
-      updatedPrev
-    ] = [
-      this.state.counts.current > 0 ? this.state.counts.current - 1 : 0,
-      this.state.counts.next > 1 ? this.state.counts.next - 1 : 1,
-      this.state.counts.prev > 0 ? this.state.counts.prev - 1 : 0
-    ]
     this.setState({
       counts: {
         total: this.props.cards.length,
-        current: updatedCurrent,
-        next: updatedNext,
-        prev: updatedPrev
+        current: this.state.counts.current > 0 ? this.state.counts.current - 1 : 0,
+        next: this.state.counts.next > 1 ? this.state.counts.next - 1 : 1,
+        prev: this.state.counts.prev > 0 ? this.state.counts.prev - 1 : 0
       }
     })
   }
