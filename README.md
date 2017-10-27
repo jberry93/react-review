@@ -3,8 +3,10 @@
   A simple flashcard app built with React
 </p>
 <p align="center">
-  [![Maintainability](https://api.codeclimate.com/v1/badges/701292c7ee1bddd17811/maintainability)](https://codeclimate.com/github/jberry93/react-review/maintainability)
-  [![Coverage Status](https://coveralls.io/repos/github/jberry93/react-review/badge.svg?branch=master)](https://coveralls.io/github/jberry93/react-review?branch=master)
+  <img src="https://img.shields.io/github/issues/jberry93/react-review.svg" alt="Issues">
+  <img src="https://img.shields.io/github/license/jberry93/react-review.svg" alt="License">
+  <a href='https://coveralls.io/github/jberry93/react-review?branch=master'><img src='https://coveralls.io/repos/github/jberry93/react-review/badge.svg?branch=master' alt='Coverage Status' /></a>
+  <a href="https://codeclimate.com/github/jberry93/react-review/maintainability"><img src="https://api.codeclimate.com/v1/badges/701292c7ee1bddd17811/maintainability" /></a>
 </p>
 
 ## Currently Built With
