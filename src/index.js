@@ -1,8 +1,16 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import ReactDOM from 'react-dom'
 import './index.css'
 
-class Deck extends Component {
+function Card (props) {
+  return (
+    <div>
+      <h1>This is a card</h1>
+    </div>
+  )
+}
+
+class Deck extends PureComponent {
   constructor (props) {
     super(props)
     this.state = {
@@ -16,7 +24,7 @@ class Deck extends Component {
     }
   }
 
-  // Need to update state when props are updated
+  // Need to manually update state when props are updated
   componentWillReceiveProps (props) {
     this.setState({
       counts: {
@@ -36,40 +44,40 @@ class Deck extends Component {
 
   nextCard = () => {
     const [
-      currentCount,
-      nextCount,
-      prevCount
+      updatedCurrent,
+      updatedNext,
+      updatedPrev
     ] = [
-      this.state.counts.current,
-      this.state.counts.next,
-      this.state.counts.prev
+      this.state.counts.current < this.state.counts.total - 1 ? this.state.counts.current + 1 : this.state.counts.current,
+      this.state.counts.next < this.state.counts.total ? this.state.counts.next + 1 : this.state.counts.next,
+      this.state.counts.prev < this.state.counts.total - 2 ? this.state.counts.prev + 1 : this.state.counts.prev
     ]
     this.setState({
       counts: {
         total: this.props.cards.length,
-        current: currentCount < this.state.counts.total - 1 ? currentCount + 1 : currentCount,
-        next: nextCount < this.state.counts.total ? nextCount + 1 : nextCount,
-        prev: prevCount < this.state.counts.total - 2 ? prevCount + 1 : prevCount
+        current: updatedCurrent,
+        next: updatedNext,
+        prev: updatedPrev
       }
     })
   }
 
   prevCard = () => {
     const [
-      currentCount,
-      nextCount,
-      prevCount
+      updatedCurrent,
+      updatedNext,
+      updatedPrev
     ] = [
-      this.state.counts.current,
-      this.state.counts.next,
-      this.state.counts.prev
+      this.state.counts.current > 0 ? this.state.counts.current - 1 : 0,
+      this.state.counts.next > 1 ? this.state.counts.next - 1 : 1,
+      this.state.counts.prev > 0 ? this.state.counts.prev - 1 : 0
     ]
     this.setState({
       counts: {
         total: this.props.cards.length,
-        current: currentCount > 0 ? currentCount - 1 : 0,
-        next: nextCount > 1 ? nextCount - 1 : 1,
-        prev: prevCount > 0 ? prevCount - 1 : 0
+        current: updatedCurrent,
+        next: updatedNext,
+        prev: updatedPrev
       }
     })
   }
@@ -90,7 +98,7 @@ class Deck extends Component {
   }
 }
 
-class FlashCards extends Component {
+class FlashCards extends PureComponent {
   constructor () {
     super()
     this.state = {
@@ -99,7 +107,8 @@ class FlashCards extends Component {
         answer: ''
       },
       cards: [],
-      isNewCard: false
+      isNewCard: false,
+      hasError: false
     }
   }
 
@@ -116,9 +125,16 @@ class FlashCards extends Component {
   submitCard = e => {
     const card = this.state.card
     const cards = this.state.cards
-    cards.push(card)
-    this.setState({ cards })
-    this.toggleNewCard()
+    if (card.question && card.answer) {
+      cards.push(card)
+      this.setState({
+        cards,
+        hasError: false
+      })
+      this.toggleNewCard()
+    } else {
+      this.setState({ hasError: true })
+    }
   }
 
   toggleNewCard = e => {
@@ -132,19 +148,15 @@ class FlashCards extends Component {
   }
 
   render () {
-    const toggleNewCard = this.state.isNewCard
-
-    const newCardStyles = {
-      display: 'flex',
-      flexDirection: 'column'
-    }
-
     return (
       <div>
         <h1>React Cards</h1>
         <button onClick={this.toggleNewCard}>Create Card</button>
-        {toggleNewCard &&
-          <div style={newCardStyles}>
+        {this.state.isNewCard &&
+          <div className="new-card-form">
+            {this.state.hasError &&
+              <p>Please give a question and answer</p>
+            }
             <textarea
               placeholder="Question"
               onChange={this.handleChange('question')}

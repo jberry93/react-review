@@ -2,4 +2,10 @@
 
 * {
   font-family: 'Source Sans Pro', sans-serif;
+  text-align: center;
+}
+
+.new-card-form {
+  display: flex;
+  flex-direction: column;
 }
