@@ -32,9 +32,6 @@ export class Deck extends PureComponent {
     })
   }
 
-  /**
-   * HACK: There is likely a better way to traverse through cards
-   */
   nextCard = () => {
     this.setState({
       counts: {
@@ -46,9 +43,6 @@ export class Deck extends PureComponent {
     })
   }
 
-  /**
-   * HACK: There is likely a better way to traverse through cards
-   */
   prevCard = () => {
     this.setState({
       counts: {
