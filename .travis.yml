@@ -15,6 +15,7 @@ before_script:
 
 script:
   - react-scripts build
+  - react-scripts test --env=jsdom
 
 after_success:
   - firebase deploy --token=${FIREBASE_API_TOKEN}

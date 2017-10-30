@@ -3,7 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "jest": {
-    "coverageReporters": ["json"]
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/node_modules/"
+    ],
+    "coverageReporters": [
+      "json",
+      "lcov"
+    ]
   },
   "dependencies": {
     "react": "^16.0.0",
@@ -15,9 +22,12 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "testNoDOM": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "coverage": "npm test -- --coverage",
+    "genCoveralls": "npm test -- --coverage | coveralls"
   },
   "devDependencies": {
+    "coveralls": "^3.0.0",
     "enzyme": "^3.1.0",
     "enzyme-adapter-react-16": "^1.0.2"
   }
