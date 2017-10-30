@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
-import { Deck } from './components/Deck'
-import { Form } from './components/Form'
+import { Deck } from './components/Deck/Deck'
+import { Form } from './components/Form/Form'
 import './index.css'
 
 export class FlashCards extends PureComponent {
@@ -8,18 +8,13 @@ export class FlashCards extends PureComponent {
     super()
     this.state = {
       cards: [],
-      isNewCard: false,
-      hasError: false
+      isNewCard: false
     }
   }
 
   updateCards = cards => {
     this.setState({ cards })
     this.toggleNewCard()
-  }
-
-  setError = setting => {
-    this.setState({ hasError: setting })
   }
 
   toggleNewCard = e => {
@@ -35,7 +30,6 @@ export class FlashCards extends PureComponent {
           <Form
             cards={this.state.cards}
             updateCards={this.updateCards}
-            setError={this.setError}
           />
         }
         {this.state.cards.length > 0 ? (
