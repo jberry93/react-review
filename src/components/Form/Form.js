@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import './Form.css'
 
 export class Form extends PureComponent {
   constructor (props) {
@@ -54,7 +55,7 @@ export class Form extends PureComponent {
     return (
       <div className="new-card-form">
         {this.state.hasError &&
-          <p>Please give a question and answer</p>
+          <p className="error-msg">Please give a question and answer</p>
         }
         <textarea
           placeholder="Question"

@@ -1,0 +1,26 @@
+textarea {
+  font-family: 'Titillium Web', sans-serif;
+  margin: 1rem 0;
+  height: 5rem;
+  width: auto;
+  padding: 1rem;
+  outline-width: 0;
+  transition: 1s;
+  resize: none;
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+}
+textarea:focus {
+  background-color: #efefef;
+  border: 1px solid #29B6F6;
+}
+
+.error-msg {
+  color: #F44336;
+  margin-bottom: 0;
+}
+
+.new-card-form {
+  display: flex;
+  flex-direction: column;
+}
