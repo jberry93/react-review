@@ -13,7 +13,13 @@
 ## Currently Built With
 - React (v.16.0.0)
 - Firebase (Hosting, Functions, Database)
+- Jest (Test runner)
+- Enzyme (Testing utility)
+- Coveralls (Test coverage analysis)
+- Travis CI (Build analysis)
+- Code Climate (Code analysis)
 - ES6
+- TypeScript (For Firebase functions)
 
 ## Current Features
 - The user can create cards
