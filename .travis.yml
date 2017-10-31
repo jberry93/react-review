@@ -17,7 +17,7 @@ before_script:
 script:
   - react-scripts build
   - react-scripts test
-  - npm test -- --coverage && cat ./coverage/lcov.info | coveralls
+  - npm run coverage
 
 after_success:
   - firebase deploy --token=${FIREBASE_API_TOKEN}

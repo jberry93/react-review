@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import './Deck.css'
 
 export class Deck extends PureComponent {
   constructor (props) {
@@ -61,14 +62,18 @@ export class Deck extends PureComponent {
   render () {
     return (
       <div>
-        {this.state.toggleSide ? (
-          <h1>{this.props.cards[this.state.counts.current].question}</h1>
-        ) : (
-          <h1>{this.props.cards[this.state.counts.current].answer}</h1>
-        )}
-        <button onClick={this.switchSides}>Flip</button>
-        <button onClick={this.prevCard}>Previous</button>
-        <button onClick={this.nextCard}>Next</button>
+        <div className="flashcard">
+          {this.state.toggleSide ? (
+            <strong>{this.props.cards[this.state.counts.current].question}</strong>
+          ) : (
+            <strong>{this.props.cards[this.state.counts.current].answer}</strong>
+          )}
+        </div>
+        <div className="action-btns">
+          <button onClick={this.switchSides}>Flip</button>
+          <button onClick={this.prevCard}>Previous</button>
+          <button onClick={this.nextCard}>Next</button>
+        </div>
       </div>
     )
   }

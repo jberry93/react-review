@@ -1,0 +1,27 @@
+.error-msg {
+  color: #F44336;
+  margin-bottom: 0;
+}
+
+.new-card-form {
+  display: flex;
+  flex-direction: column;
+}
+
+textarea {
+  border: 1px solid #d3d3d3;
+  border-radius: 5px;
+  font-family: 'Titillium Web', sans-serif;
+  height: 5rem;
+  margin: 1rem 0;
+  outline-width: 0;
+  padding: 1rem;
+  resize: none;
+  transition: 1s;
+  width: auto;
+}
+
+textarea:focus {
+  background-color: #efefef;
+  border: 1px solid #29B6F6;
+}

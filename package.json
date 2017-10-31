@@ -21,10 +21,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "testNoDOM": "react-scripts test",
     "eject": "react-scripts eject",
-    "coverage": "npm test -- --coverage",
-    "genCoveralls": "npm test -- --coverage && cat ./coverage/lcov.info | coveralls"
+    "coverage": "npm test -- --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
