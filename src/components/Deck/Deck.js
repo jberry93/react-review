@@ -3,10 +3,14 @@ import React, { PureComponent } from 'react'
 export class Deck extends PureComponent {
   constructor (props) {
     super(props)
+    let totalCount = 0
+    if (this.props.cards) {
+      totalCount = this.props.cards.length
+    }
     this.state = {
       toggleSide: true,
       counts: {
-        total: this.props.cards.length,
+        total: totalCount,
         current: 0,
         next: 1,
         prev: 0
@@ -32,9 +36,6 @@ export class Deck extends PureComponent {
     })
   }
 
-  /**
-   * HACK: There is likely a better way to traverse through cards
-   */
   nextCard = () => {
     this.setState({
       counts: {
@@ -46,9 +47,6 @@ export class Deck extends PureComponent {
     })
   }
 
-  /**
-   * HACK: There is likely a better way to traverse through cards
-   */
   prevCard = () => {
     this.setState({
       counts: {

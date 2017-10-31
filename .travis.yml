@@ -12,9 +12,12 @@ branches:
 before_script:
   - npm install -g firebase-tools
   - npm install -g react-scripts
+  - npm install -g coveralls
 
 script:
   - react-scripts build
+  - react-scripts test
+  - npm test -- --coverage && cat ./coverage/lcov.info | coveralls
 
 after_success:
   - firebase deploy --token=${FIREBASE_API_TOKEN}

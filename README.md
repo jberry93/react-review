@@ -13,7 +13,13 @@
 ## Currently Built With
 - React (v.16.0.0)
 - Firebase (Hosting, Functions, Database)
+- Jest (Test runner)
+- Enzyme (Testing utility)
+- Coveralls (Test coverage analysis)
+- Travis CI (Build analysis)
+- Code Climate (Code analysis)
 - ES6
+- TypeScript (For Firebase functions)
 
 ## Current Features
 - The user can create cards
@@ -34,7 +40,7 @@ The user can...
 - [ ] Bring in styling (Sass or Stylus)
 - [ ] Make scaffolding more "robust" (make directories for components, tests, etc)
 - [ ] Think about state management (if necessary bring in Redux, Flux, etc)
-- [ ] Bring in a testing framework (will likely be Jest for funsies :D)
+- [x] Bring in a testing framework (will likely be Jest for funsies :D)
 - [x] Use TravisCI to kickoff builds automatically
 - [ ] Use Coveralls to run analysis on testing coverage
 - [x] Use Dependabot to keep dependencies up to date

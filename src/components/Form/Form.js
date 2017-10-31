@@ -31,6 +31,12 @@ export class Form extends PureComponent {
     })
   }
 
+  setError = setting => {
+    this.setState({
+      hasError: setting
+    })
+  }
+
   submitCard = e => {
     const card = this.state.card
     const cards = this.props.cards
@@ -38,9 +44,9 @@ export class Form extends PureComponent {
       cards.push(card)
       this.props.updateCards(cards)
       this.emptyNewCard()
-      this.props.setError(false)
+      this.setError(false)
     } else {
-      this.props.setError(true)
+      this.setError(true)
     }
   }
 
