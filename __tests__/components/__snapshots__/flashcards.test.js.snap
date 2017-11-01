@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Flashcards Component renders w/out crashing: Snapshot 1`] = `
+<div>
+  <h1>
+    React Review
+  </h1>
+  <button
+    onClick={[Function]}
+  >
+    Create Card
+  </button>
+  <h1>
+    Sorry there are no cards to show
+  </h1>
+</div>
+`;

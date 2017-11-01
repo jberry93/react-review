@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardForm Component renders w/out crashing: Snapshot 1`] = `
+<div
+  className="jsx-2099964395 new-card-form"
+>
+  <textarea
+    className="jsx-2099964395"
+    onChange={[Function]}
+    placeholder="Question"
+    rows="5"
+    value=""
+  />
+  <textarea
+    className="jsx-2099964395"
+    onChange={[Function]}
+    placeholder="Answer"
+    rows="5"
+    value=""
+  />
+  <button
+    className="jsx-2099964395"
+    onClick={[Function]}
+  >
+    Create
+  </button>
+</div>
+`;

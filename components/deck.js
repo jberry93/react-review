@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react'
-import './Deck.css'
 
 export class Deck extends PureComponent {
   constructor (props) {
@@ -32,9 +31,7 @@ export class Deck extends PureComponent {
   }
 
   switchSides = () => {
-    this.setState({
-      toggleSide: !this.state.toggleSide
-    })
+    this.setState({ toggleSide: !this.state.toggleSide })
   }
 
   nextCard = () => {
@@ -59,22 +56,40 @@ export class Deck extends PureComponent {
     })
   }
 
-  render () {
-    return (
-      <div>
-        <div className="flashcard">
-          {this.state.toggleSide ? (
-            <strong>{this.props.cards[this.state.counts.current].question}</strong>
-          ) : (
-            <strong>{this.props.cards[this.state.counts.current].answer}</strong>
-          )}
-        </div>
-        <div className="action-btns">
-          <button onClick={this.switchSides}>Flip</button>
-          <button onClick={this.prevCard}>Previous</button>
-          <button onClick={this.nextCard}>Next</button>
-        </div>
+  render = () => (
+    <div>
+      <div className="flashcard">
+        {this.state.toggleSide ? (
+          <strong>{this.props.cards[this.state.counts.current].question}</strong>
+        ) : (
+          <strong>{this.props.cards[this.state.counts.current].answer}</strong>
+        )}
       </div>
-    )
-  }
+      <div className="action-btns">
+        <button onClick={this.switchSides}>Flip</button>
+        <button onClick={this.prevCard}>Previous</button>
+        <button onClick={this.nextCard}>Next</button>
+      </div>
+      <style jsx>{`
+        .action-btns {
+          align-items: center;
+          display: flex;
+          justify-content: space-evenly;
+        }
+        .action-btns > button {
+          width: 6rem;
+        }
+        .flashcard {
+          align-items: center;
+          border: 1px solid #000;
+          border-radius: 10px;
+          display: flex;
+          flex-wrap: wrap;
+          height: 12rem;
+          justify-content: center;
+          margin: 1rem 0.5rem;
+        }
+      `}</style>
+    </div>
+  )
 }

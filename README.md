@@ -11,15 +11,16 @@
 </p>
 
 ## Currently Built With
-- React (v16.0.0)
-- Firebase (Hosting, Cloud Functions, Firestore)
+- NextJS (v4)
+- React (v16)
+- Netlify (Static hosting)
+- GraphCool (Serverless GraphQL Backend)
 - Jest (Test runner)
 - Enzyme (Testing utility)
 - Coveralls (Test coverage analysis)
 - Travis CI (Build analysis)
 - Code Climate (Code analysis)
 - JavaScript (ES6)
-- TypeScript (Cloud functions)
 
 ## Current Features
 - The user can create cards
