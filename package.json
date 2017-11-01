@@ -3,9 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "jest": {
+    "setupFiles": [
+      "<rootDir>/utils/shim.js",
+      "<rootDir>/utils/enzyme-setup.js"
+    ],
     "collectCoverageFrom": [
-      "src/**/*.{js,jsx}",
-      "!<rootDir>/node_modules/"
+      "pages/*.js",
+      "components/*.js",
+      "!pages/_document.js",
+      "!**/node_modules/**",
+      "!**/vendor/**"
     ],
     "coverageReporters": [
       "json",
@@ -13,20 +20,23 @@
     ]
   },
   "dependencies": {
+    "next": "^4.1.4",
     "react": "^16.0.0",
-    "react-dom": "^16.0.0",
-    "react-scripts": "1.0.16"
+    "react-dom": "^16.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "jest",
     "coverage": "npm test -- --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
     "enzyme": "^3.1.0",
-    "enzyme-adapter-react-16": "^1.0.2"
+    "enzyme-adapter-react-16": "^1.0.2",
+    "jest": "^21.2.1",
+    "react-addons-test-utils": "^15.6.2",
+    "react-test-renderer": "^16.0.0"
   }
 }

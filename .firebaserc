@@ -1,6 +1,0 @@
-{
-  "projects": {
-    "default": "react-review",
-    "staging": "react-review"
-  }
-}
