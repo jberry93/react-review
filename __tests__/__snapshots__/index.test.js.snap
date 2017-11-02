@@ -2,18 +2,25 @@
 
 exports[`index renders w/out crashing: Snapshot 1`] = `
 <div
-  className="jsx-97250060"
+  className="jsx-2292233321"
 >
-  <div>
-    <h1>
+  <div
+    className="jsx-553751598"
+  >
+    <h1
+      className="jsx-553751598"
+    >
       React Review
     </h1>
     <button
+      className="jsx-553751598"
       onClick={[Function]}
     >
       Create Card
     </button>
-    <h1>
+    <h1
+      className="jsx-553751598"
+    >
       Sorry there are no cards to show
     </h1>
   </div>
