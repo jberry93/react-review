@@ -17,7 +17,7 @@ export default class AppDocument extends Document {
         <meta httpEquiv="X-UA-Compatible" content="IE=Edge"/>
         <meta name="theme-color" content="#000000"/>
         <meta name="description" content="A simple flashcard application"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,700"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
       </Head>
       <body>
         <Main/>
