@@ -23,18 +23,25 @@ export class Flashcards extends PureComponent {
   render = () => (
     <div>
       <h1>React Review</h1>
-      <button onClick={this.toggleNewCard}>Create Card</button>
-      {this.state.isNewCard &&
+      {this.state.isNewCard ? (
         <CardForm
           cards={this.state.cards}
           updateCards={this.updateCards}
+          toggleNewCard={this.toggleNewCard}
         />
-      }
+      ) : (
+        <button onClick={this.toggleNewCard}>Create Card</button>
+      )}
       {this.state.cards.length > 0 ? (
         <Deck cards={this.state.cards}/>
       ) : (
         <h1>Sorry there are no cards to show</h1>
       )}
+      <style jsx>{`
+        h1 {
+          margin: 0.5rem 0;
+        }
+      `}</style>
     </div>
   )
 }

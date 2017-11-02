@@ -3,12 +3,13 @@ import { Flashcards } from '../components/flashcards'
 export default () => (
   <div>
     <Flashcards/>
-    <style jsx>{`
+    <style jsx global>{`
       body {
-        font-family: 'Titillium Web', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         text-align: center;
       }
       button {
+        font-family: 'Montserrat', sans-serif;
         background-color: #29B6F6;
         border: 0;
         border-radius: 5px;
@@ -20,6 +21,11 @@ export default () => (
       }
       button:hover {
         box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
+      }
+      @media screen and (max-width: 992px) {
+        button {
+          width: 100%;
+        }
       }
     `}</style>
   </div>

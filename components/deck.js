@@ -57,7 +57,7 @@ export class Deck extends PureComponent {
   }
 
   render = () => (
-    <div>
+    <div className="deck-container">
       <div className="flashcard">
         {this.state.toggleSide ? (
           <strong>{this.props.cards[this.state.counts.current].question}</strong>
@@ -77,17 +77,34 @@ export class Deck extends PureComponent {
           justify-content: space-evenly;
         }
         .action-btns > button {
+          margin: 0 3rem;
           width: 6rem;
+        }
+        .deck-container {
+          align-items: center;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
         }
         .flashcard {
           align-items: center;
-          border: 1px solid #000;
-          border-radius: 10px;
+          box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.2);
           display: flex;
           flex-wrap: wrap;
           height: 12rem;
           justify-content: center;
           margin: 1rem 0.5rem;
+          width: 36rem;
+        }
+        @media screen and (max-width: 992px) {
+          .deck-container,
+          .flashcard,
+          .action-btns {
+            width: 100%;
+          }
+          .action-btns > button {
+            margin: 0 1rem;
+          }
         }
       `}</style>
     </div>

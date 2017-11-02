@@ -53,20 +53,33 @@ export class CardForm extends PureComponent {
       {this.state.hasError &&
         <p className="error-msg">Please give a question and answer</p>
       }
-      <textarea
-        placeholder="Question"
-        onChange={this.handleChange('question')}
-        value={this.state.card.question}
-        rows="5"
-      ></textarea>
-      <textarea
-        placeholder="Answer"
-        onChange={this.handleChange('answer')}
-        value={this.state.card.answer}
-        rows="5"
-      ></textarea>
-      <button onClick={this.submitCard}>Create</button>
+      <div className="form-container">
+        <textarea
+          placeholder="Front"
+          onChange={this.handleChange('question')}
+          value={this.state.card.question}
+          rows="5"
+        ></textarea>
+        <textarea
+          placeholder="Back"
+          onChange={this.handleChange('answer')}
+          value={this.state.card.answer}
+          rows="5"
+        ></textarea>
+      </div>
+      <div className="action-btns">
+        <button className="cancel-btn" onClick={this.props.toggleNewCard}>Cancel</button>
+        <button className="create-btn" onClick={this.submitCard}>Create</button>
+      </div>
       <style jsx>{`
+        .action-btns {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+        }
+        .action-btns > button {
+          margin: 0 0.5rem;
+        }
         .error-msg {
           color: #F44336;
           margin-bottom: 0;
@@ -75,21 +88,55 @@ export class CardForm extends PureComponent {
           display: flex;
           flex-direction: column;
         }
+        .form-container {
+          display: flex;
+          justify-content: space-evenly;
+          flex-wrap: wrap;
+        }
+        .create-btn,
+        .cancel-btn {
+          width: 6rem;
+          margin: 0 auto;
+        }
+        .create-btn {
+          background-color: #00C853;
+        }
+        .cancel-btn {
+          background-color: #D50000;
+        }
         textarea {
           border: 1px solid #d3d3d3;
           border-radius: 5px;
-          font-family: 'Titillium Web', sans-serif;
-          height: 5rem;
-          margin: 1rem 0;
+          font-family: 'Montserrat', sans-serif;
+          height: 10rem;
+          margin: 1rem auto;
           outline-width: 0;
           padding: 1rem;
           resize: none;
           transition: 1s;
-          width: auto;
+          width: 25rem;
         }
         textarea:focus {
           background-color: #efefef;
           border: 1px solid #29B6F6;
+        }
+        @media screen and (max-width: 992px) {
+          .form-container {
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+          }
+          .action-btns {
+            flex-direction: column;
+          }
+          .action-btns > button {
+            margin: 0.5rem 0;
+            width: 100%;
+          }
+          textarea {
+            margin: 0.5rem 0;
+            width: calc(100% - 2rem);
+          }
         }
       `}</style>
     </div>

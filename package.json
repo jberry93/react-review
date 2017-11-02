@@ -28,7 +28,7 @@
     "dev": "next",
     "build": "next build && next export",
     "start": "next start",
-    "test": "jest",
+    "test": "jest -u",
     "coverage": "npm test -- --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "devDependencies": {
