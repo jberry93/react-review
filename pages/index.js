@@ -1,8 +1,29 @@
+import { QueryRenderer, graphql } from 'react-relay'
+import { environment } from '../store/index'
 import { Flashcards } from '../components/flashcards'
+
+const allCards = graphql`
+  query allCards {
+    id
+    question
+    answer
+  }
+`
 
 export default () => (
   <div>
-    <Flashcards/>
+    <QueryRenderer
+      environment={environment}
+      query={allCards}
+      render={({ error, props }) => {
+        if (error) {
+          return <div>{error.message}</div>
+        } else if (props) {
+          return <Flashcards viewer={props.viewer}/>
+        }
+        return <div>Loading</div>
+      }}
+    />
     <style jsx global>{`
       body {
         font-family: 'Montserrat', sans-serif;

@@ -94,6 +94,8 @@ export class Deck extends PureComponent {
           height: 12rem;
           justify-content: center;
           margin: 1rem 0.5rem;
+          overflow: auto;
+          padding: 1rem;
           width: 36rem;
         }
         @media screen and (max-width: 992px) {
