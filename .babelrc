@@ -12,5 +12,11 @@
         "next/babel"
       ]
     }
-  }
+  },
+  "plugins": [
+    [
+      "relay",
+      { "schema": "store/schema.graphql" }
+    ]
+  ]
 }
