@@ -2,34 +2,34 @@
 
 exports[`Deck Component renders w/out crashing: Snapshot 1`] = `
 <div
-  className="jsx-1698593732 deck-container"
+  className="jsx-3171881997 deck-container"
 >
   <div
-    className="jsx-1698593732 flashcard"
+    className="jsx-3171881997 flashcard"
   >
     <strong
-      className="jsx-1698593732"
+      className="jsx-3171881997"
     >
       Test question
     </strong>
   </div>
   <div
-    className="jsx-1698593732 action-btns"
+    className="jsx-3171881997 action-btns"
   >
     <button
-      className="jsx-1698593732"
+      className="jsx-3171881997"
       onClick={[Function]}
     >
       Flip
     </button>
     <button
-      className="jsx-1698593732"
+      className="jsx-3171881997"
       onClick={[Function]}
     >
       Previous
     </button>
     <button
-      className="jsx-1698593732"
+      className="jsx-3171881997"
       onClick={[Function]}
     >
       Next

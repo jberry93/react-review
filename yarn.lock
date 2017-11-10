@@ -1539,7 +1539,11 @@ dateformat@^1.0.11, dateformat@^1.0.12:
     get-stdin "^4.0.1"
     meow "^3.3.0"
 
+<<<<<<< HEAD
 debug@2, debug@2.6.9, debug@^2.2.0, debug@^2.4.1, debug@^2.6.8, debug@^2.6.9:
+=======
+debug@2.6.9, debug@^2.2.0, debug@^2.4.1, debug@^2.6.8, debug@^2.6.9:
+>>>>>>> 63246090886f78f6dbf64441f8f645ac294a812e
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
@@ -2018,7 +2022,11 @@ expect@^21.2.1:
     jest-message-util "^21.2.1"
     jest-regex-util "^21.2.0"
 
+<<<<<<< HEAD
 extend@3, extend@~3.0.0, extend@~3.0.1:
+=======
+extend@~3.0.0, extend@~3.0.1:
+>>>>>>> 63246090886f78f6dbf64441f8f645ac294a812e
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.1.tgz#a755ea7bc1adfcc5a31ce7e762dbaadc5e636444"
 
@@ -4139,7 +4147,11 @@ parse5@^3.0.1:
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-3.0.3.tgz#042f792ffdd36851551cf4e9e066b3874ab45b5c"
   dependencies:
+<<<<<<< HEAD
     "@types/node" "*"
+=======
+    "@types/node" "^6.0.46"
+>>>>>>> 63246090886f78f6dbf64441f8f645ac294a812e
 
 path-browserify@0.0.0:
   version "0.0.0"
@@ -4446,9 +4458,15 @@ react-proxy@^3.0.0-alpha.0:
   dependencies:
     lodash "^4.6.1"
 
+<<<<<<< HEAD
 react-test-renderer@^16.0.0-0, react-test-renderer@^16.1.0:
   version "16.1.0"
   resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.1.0.tgz#33a1d3ce896311e0dd1547649b1456ffa7fda415"
+=======
+react-test-renderer@^16.0.0, react-test-renderer@^16.0.0-0:
+  version "16.0.0"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-16.0.0.tgz#9fe7b8308f2f71f29fc356d4102086f131c9cb15"
+>>>>>>> 63246090886f78f6dbf64441f8f645ac294a812e
   dependencies:
     fbjs "^0.8.16"
     object-assign "^4.1.1"

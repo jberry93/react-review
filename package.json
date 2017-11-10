@@ -29,8 +29,7 @@
     "build": "next build && next export",
     "start": "next start",
     "test": "jest -u",
-    "coverage": "npm test -- --coverage && cat ./coverage/lcov.info | coveralls",
-    "relay": "relay-compiler --src ./ --schema schema.graphql"
+    "coverage": "npm test -- --coverage && cat ./coverage/lcov.info | coveralls"
   },
   "devDependencies": {
     "babel-plugin-relay": "^1.4.1",
