@@ -14,7 +14,6 @@
 - NextJS (v4)
 - React (v16)
 - Netlify (Static hosting)
-- GraphCool (Serverless GraphQL Backend)
 - Jest (Test runner)
 - Enzyme (Testing utility)
 - Coveralls (Test coverage analysis)
