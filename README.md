@@ -13,6 +13,7 @@
 ## Currently Built With
 - NextJS (v4)
 - React (v16)
+- Redux (State management)
 - Netlify (Static hosting)
 - Jest (Test runner)
 - Enzyme (Testing utility)
@@ -39,7 +40,7 @@ The user can...
 ## Todos
 - [x] Bring in styling (Sass or Stylus)
 - [x] Make scaffolding more "robust" (make directories for components, tests, etc)
-- [ ] Think about state management (if necessary bring in Redux, Flux, etc)
+- [x] Think about state management (if necessary bring in Redux, Flux, etc)
 - [x] Bring in a testing framework (will likely be Jest for funsies :D)
 - [x] Use TravisCI to kickoff builds automatically
 - [x] Use Coveralls to run analysis on testing coverage
