@@ -1,6 +1,8 @@
-import { Flashcards } from '../components/flashcards'
+import withRedux from 'next-redux-wrapper'
+import { initStore } from '../store/configureStore'
+import Flashcards from '../components/flashcards'
 
-export default () => (
+const App = () => (
   <div>
     <Flashcards/>
     <style jsx global>{`
@@ -25,8 +27,11 @@ export default () => (
       @media screen and (max-width: 992px) {
         button {
           width: 100%;
+          border-radius: 0;
         }
       }
     `}</style>
   </div>
 )
+
+export default withRedux(initStore)(App)

@@ -104,6 +104,10 @@ export class Deck extends PureComponent {
           .action-btns {
             width: 100%;
           }
+          .flashcard {
+            margin: 1rem 0;
+            padding: 0;
+          }
           .action-btns > button {
             margin: 0 1rem;
           }
