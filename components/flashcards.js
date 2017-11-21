@@ -5,7 +5,7 @@ import { toggleNewCard, updateCards } from '../store/configureStore'
 import { Deck } from './deck'
 import { CardForm } from './card-form'
 
-class Flashcards extends PureComponent {
+export class Flashcards extends PureComponent {
   render = () => (
     <div>
       <h1>React Review</h1>
