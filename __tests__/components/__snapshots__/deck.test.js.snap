@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Deck Component renders w/out crashing: Snapshot 1`] = `
+<div
+  className="jsx-540359402 deck-container"
+>
+  <div
+    className="jsx-540359402 flashcard"
+  >
+    <strong
+      className="jsx-540359402"
+    >
+      Test question 1
+    </strong>
+  </div>
+  <div
+    className="jsx-540359402 action-btns"
+  >
+    <button
+      className="jsx-540359402"
+      onClick={[Function]}
+    >
+      Flip
+    </button>
+    <button
+      className="jsx-540359402"
+      onClick={[Function]}
+    >
+      Previous
+    </button>
+    <button
+      className="jsx-540359402"
+      onClick={[Function]}
+    >
+      Next
+    </button>
+  </div>
+</div>
+`;
