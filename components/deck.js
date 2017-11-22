@@ -94,6 +94,8 @@ export class Deck extends PureComponent {
           height: 12rem;
           justify-content: center;
           margin: 1rem 0.5rem;
+          overflow: auto;
+          padding: 1rem;
           width: 36rem;
         }
         @media screen and (max-width: 992px) {
@@ -101,6 +103,10 @@ export class Deck extends PureComponent {
           .flashcard,
           .action-btns {
             width: 100%;
+          }
+          .flashcard {
+            margin: 1rem 0;
+            padding: 0;
           }
           .action-btns > button {
             margin: 0 1rem;
