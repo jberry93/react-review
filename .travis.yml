@@ -29,6 +29,7 @@ addons:
     organization: "jberry93-github"
     branches:
       - master
+      - dev
 
 jdk:
   - oraclejdk8
