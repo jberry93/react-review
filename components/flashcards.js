@@ -37,7 +37,7 @@ const mapDispatchToProps = (dispatch) => {
   return {
     updateCards: bindActionCreators(updateCards, dispatch),
     toggleNewCard: bindActionCreators(toggleNewCard, dispatch)
-  }
+  };
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Flashcards);

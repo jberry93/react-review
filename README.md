@@ -8,6 +8,10 @@
   <img src="https://travis-ci.org/jberry93/react-review.svg?branch=master" alt="Travis CI">
   <a href='https://coveralls.io/github/jberry93/react-review?branch=master'><img src='https://coveralls.io/repos/github/jberry93/react-review/badge.svg?branch=master' alt='Coverage Status' /></a>
   <a href="https://codeclimate.com/github/jberry93/react-review/maintainability"><img src="https://api.codeclimate.com/v1/badges/701292c7ee1bddd17811/maintainability" /></a>
+  <a class="badge-align" href="https://www.codacy.com/app/jberry93/react-review?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jberry93/react-review&amp;utm_campaign=Badge_Grade"><img src="https://api.codacy.com/project/badge/Grade/efa6232ea69746cd9ec3c0fc0f1cae96"/></a>
+  <a href="https://codecov.io/gh/jberry93/react-review">
+  <img src="https://codecov.io/gh/jberry93/react-review/branch/master/graph/badge.svg" alt="Codecov" />
+</a>
 </p>
 
 ## Currently Built With

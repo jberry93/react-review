@@ -9,7 +9,7 @@ export class CardForm extends PureComponent {
         answer: ""
       },
       hasError: false
-    }
+    };
   }
 
   // Currying ftw :D
@@ -56,13 +56,13 @@ export class CardForm extends PureComponent {
       <div className="form-container">
         <textarea
           placeholder="Front"
-          onChange={this.handleChange('question')}
+          onChange={this.handleChange("question")}
           value={this.state.card.question}
           rows="5"
         ></textarea>
         <textarea
           placeholder="Back"
-          onChange={this.handleChange('answer')}
+          onChange={this.handleChange("answer")}
           value={this.state.card.answer}
           rows="5"
         ></textarea>
