@@ -1,11 +1,11 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent } from "react";
 
 export class Deck extends PureComponent {
   constructor (props) {
-    super(props)
-    let totalCount = 0
+    super(props);
+    let totalCount = 0;
     if (this.props.cards) {
-      totalCount = this.props.cards.length
+      totalCount = this.props.cards.length;
     }
     this.state = {
       toggleSide: true,
@@ -15,7 +15,7 @@ export class Deck extends PureComponent {
         next: 1,
         prev: 0
       }
-    }
+    };
   }
 
   // Need to manually update state when props are updated
@@ -27,11 +27,11 @@ export class Deck extends PureComponent {
         next: this.state.counts.next,
         prev: this.state.counts.prev
       }
-    })
+    });
   }
 
   switchSides = () => {
-    this.setState({ toggleSide: !this.state.toggleSide })
+    this.setState({ toggleSide: !this.state.toggleSide });
   }
 
   nextCard = () => {
@@ -42,7 +42,7 @@ export class Deck extends PureComponent {
         next: this.state.counts.next < this.state.counts.total ? this.state.counts.next + 1 : this.state.counts.next,
         prev: this.state.counts.prev < this.state.counts.total - 2 ? this.state.counts.prev + 1 : this.state.counts.prev
       }
-    })
+    });
   }
 
   prevCard = () => {
@@ -53,7 +53,7 @@ export class Deck extends PureComponent {
         next: this.state.counts.next > 1 ? this.state.counts.next - 1 : 1,
         prev: this.state.counts.prev > 0 ? this.state.counts.prev - 1 : 0
       }
-    })
+    });
   }
 
   render = () => (
@@ -114,5 +114,5 @@ export class Deck extends PureComponent {
         }
       `}</style>
     </div>
-  )
+  );
 }

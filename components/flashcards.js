@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { toggleNewCard, updateCards } from '../store/configureStore'
-import { Deck } from './deck'
-import { CardForm } from './card-form'
+import React, { PureComponent } from "react";
+import { connect } from "react-redux";
+import { bindActionCreators } from "redux";
+import { toggleNewCard, updateCards } from "../store/configureStore";
+import { Deck } from "./deck";
+import { CardForm } from "./card-form";
 
 export class Flashcards extends PureComponent {
   render = () => (
@@ -29,15 +29,15 @@ export class Flashcards extends PureComponent {
         }
       `}</style>
     </div>
-  )
+  );
 }
 
-const mapStateToProps = ({ cards, isNewCard }) => ({ cards, isNewCard })
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = ({ cards, isNewCard }) => ({ cards, isNewCard });
+const mapDispatchToProps = (dispatch) => {
   return {
     updateCards: bindActionCreators(updateCards, dispatch),
     toggleNewCard: bindActionCreators(toggleNewCard, dispatch)
   }
-}
+};
 
-export default connect(mapStateToProps, mapDispatchToProps)(Flashcards)
+export default connect(mapStateToProps, mapDispatchToProps)(Flashcards);

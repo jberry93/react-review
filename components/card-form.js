@@ -1,50 +1,50 @@
-import React, { PureComponent } from 'react'
+import React, { PureComponent } from "react";
 
 export class CardForm extends PureComponent {
   constructor (props) {
-    super(props)
+    super(props);
     this.state = {
       card: {
-        question: '',
-        answer: ''
+        question: "",
+        answer: ""
       },
       hasError: false
     }
   }
 
   // Currying ftw :D
-  handleChange = propName => e => {
-    const { card } = this.state
+  handleChange = (propName) => (e) => {
+    const { card } = this.state;
     const newCard = {
       ...card,
       [propName]: e.target.value
-    }
-    this.setState({ card: newCard })
+    };
+    this.setState({ card: newCard });
   }
 
   emptyNewCard = () => {
     this.setState({
       card: {
-        question: '',
-        answer: ''
+        question: "",
+        answer: ""
       }
-    })
+    });
   }
 
-  setError = setting => {
-    this.setState({ hasError: setting })
+  setError = (setting) => {
+    this.setState({ hasError: setting });
   }
 
   submitCard = () => {
-    const { card } = this.state
-    const { cards } = this.props
+    const { card } = this.state;
+    const { cards } = this.props;
     if (card.question && card.answer) {
-      cards.push(card)
-      this.props.updateCards(cards)
-      this.emptyNewCard()
-      this.setError(false)
+      cards.push(card);
+      this.props.updateCards(cards);
+      this.emptyNewCard();
+      this.setError(false);
     } else {
-      this.setError(true)
+      this.setError(true);
     }
   }
 
@@ -140,5 +140,5 @@ export class CardForm extends PureComponent {
         }
       `}</style>
     </div>
-  )
+  );
 }
