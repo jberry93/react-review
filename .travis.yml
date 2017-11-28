@@ -1,42 +1,29 @@
 language: node_js
-
 node_js:
-  - "node"
-  - "7"
-  - "8"
-
+- node
+- '7'
+- '8'
 branches:
   only:
-    - master
-
+  - master
 before_script:
-  - npm install -g jest
-  - npm install -g coveralls
-
+- npm install -g jest
+- npm install -g coveralls
 script:
-  - npm run coverage
-
+- sonar-scanner
 cache:
-  yarn: true
   directories:
-    - "node_modules"
-
+  - "$HOME/.sonar/cache"
 dist: trusty
 sudo: required
-
 addons:
   sonarcloud:
-    organization: "jberry93-github"
+    organization: jberry93-github
+    token:
+      github_token:
+        secure: mVzvc72YfJfI3wzzasp7NTmrwdcIw4U6xyST3DNvNBd6M7S1KdxvqncQRoJ+cayzRs7mv5B3mVk2bWGczr7U9WVHQOWsTxOZovp8JmGV9wwlZaKOl24I1SvQ9oks6CSKBSKhhmt7JZ8X6GxmP9ueF+CJEam0Jwvp/ilYDLOjr1MBs1Ys01r3RTTU61CGBD0FBlAeTBS1waFzqDbPCV6gLgCQND+LjVDT6MRpPncr0/v65Du+8bDGZdNZMeU0xlMRUz5dT9XxEsrYIBglb+Bjbza9qST9EdYMS5xuFHVSa2txnu94crwVKheMxo5vs6cEFzIHNTv5KJyHxQq3Qc7+HtYARnGP00UWuliV0SuvvAQ2dBN5We9tckrq0+vtnaqB3jTNCSpwt7TPg/j6iY18lCcwVnufk++Ev3Z0+jBWBumZWQnb1eZ7y3479iW5litA9MBbnuMDb8BR04YLcnW0Xmk15LJ3xGLAzsusC0c/ypWx2CyYPXKWJfo4He/6g4i5Afo7TfOYCB/9LpChCtmkrT7Z/ziP/9zyfOIDOYGQTjRGtfzKs+MzLRgDHMlwW/TYVYqlLsQjcEriULHKxMwa+EBqrWMcDtD07ZdlWgpk0EYA26rYQBgh+LM9GzUvxyyL3I+ulFqOrdQ0HWcZuIK5kkNmeD81dX3fJu/syR7Sf1g=
     branches:
-      - master
-      - dev
-
+    - master
+    - dev
 jdk:
-  - oraclejdk8
-
-script:
-  - sonar-scanner
-
-cache:
-  directories:
-    - '$HOME/.sonar/cache'
+- oraclejdk8
