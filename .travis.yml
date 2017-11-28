@@ -12,9 +12,11 @@ branches:
 before_script:
   - npm install -g jest
   - npm install -g coveralls
+  - npm install -g codecov
 
 script:
   - npm run coverage
+  - codecov
 
 cache:
   yarn: true
