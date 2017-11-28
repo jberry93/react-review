@@ -1,6 +1,6 @@
-import withRedux from 'next-redux-wrapper'
-import { initStore } from '../store/configureStore'
-import Flashcards from '../components/flashcards'
+import withRedux from "next-redux-wrapper";
+import { initStore } from "../store/configureStore";
+import Flashcards from "../components/flashcards";
 
 const App = () => (
   <div>
@@ -32,6 +32,6 @@ const App = () => (
       }
     `}</style>
   </div>
-)
+);
 
-export default withRedux(initStore)(App)
+export default withRedux(initStore)(App);
