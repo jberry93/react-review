@@ -20,3 +20,22 @@ cache:
   yarn: true
   directories:
     - "node_modules"
+
+dist: trusty
+sudo: required
+
+addons:
+  sonarcloud:
+    organization: "jberry93-github"
+    branches:
+      - master
+
+jdk:
+  - oraclejdk8
+
+script:
+  - sonar-scanner
+
+cache:
+  directories:
+    - '$HOME/.sonar/cache'
