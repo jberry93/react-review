@@ -22,24 +22,17 @@
 - Jest (Test runner)
 - Enzyme (Testing utility)
 - Coveralls (Test coverage analysis)
+- Codecov (Test coverage analysis)
 - Travis CI (Build analysis)
 - Code Climate (Code analysis)
+- Codacy (Code analysis)
+- SideCI (Code analysis)
 - JavaScript (ES6)
 
 ## Current Features
 - The user can create cards
 - The user can flip the current card
 - If possible, the user can go to the next or previous card
-
-## Feature Wishlist
-The user can...
-- [ ] create decks
-- [ ] save decks
-- [ ] delete decks
-- [ ] update decks
-- [ ] save cards
-- [ ] delete cards
-- [ ] update cards
 
 ## Todos
 - [x] Bring in styling (Sass or Stylus)
@@ -52,3 +45,4 @@ The user can...
 - [x] Use Code Climate to keep track of tech debt
 - [x] Think about architecture (JAMstack, MVC, etc)
 - [x] Think about hosting (will likely be Firebase for funsies :D)
+- [ ] Increase test coverage
